@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 TotalNeto = TotalBruto;
                 jtvTotal.setText(String.valueOf(TotalNeto));
             }
-            
+
             //Propina = TotalBruto * 0.1;
 
             jtvValorxP.setText(String.valueOf(ValorxP_double));
