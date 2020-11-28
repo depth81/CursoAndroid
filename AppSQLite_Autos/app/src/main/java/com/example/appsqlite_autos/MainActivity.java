@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     EditText jetUsuario, jetClave;
-    Button jbtnIngresar;
+    Button jbtnIngresar, jbtnRegistrarse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         jetUsuario = findViewById(R.id.etUsuario);
         jetClave = findViewById(R.id.etClave);
         jbtnIngresar = findViewById(R.id.btnIngresar);
-
+        jbtnRegistrarse = findViewById(R.id.btnRegistrarse);
 
     }
 
@@ -49,6 +49,16 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intMostrar);
 
         }
+
+    }//END Ingresar()
+
+    public void Registrarse(View v){
+
+        //Cambio de actividad
+        Intent intRegistrarse = new Intent(this,RegisterActivity.class);
+
+        //Lanzar la actividad
+        startActivity(intRegistrarse);
 
     }
 
