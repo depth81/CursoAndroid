@@ -3,6 +3,8 @@ package com.example.appsqlite_autos;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -39,14 +41,21 @@ public class MainActivity extends AppCompatActivity {
             jetUsuario.requestFocus();
         }else{
 
-            //Cambio de actividad
-            Intent intMostrar = new Intent(this, ShowActivity.class);
+            MainSQLiteOpenHelper Admin = new MainSQLiteOpenHelper(this, "Concesionario", null, 1);
+            SQLiteDatabase db = Admin.getReadableDatabase();
+            Cursor fila = db.rawQuery("select idUsuario from tblUsuario where idUsuario = '"+usuario+"' and clave='"+clave+"'",null);
+            if(fila.moveToFirst()){
+                //Cambio de actividad
+                Intent intMostrar = new Intent(this, ShowActivity.class);
+                //Pasar datos
+                intMostrar.putExtra("datos", usuario);
+                //Lanzar la actividad
+                startActivity(intMostrar);
+            }else{
+                Toast.makeText(this,"Revise los datos. No puede ingresar", Toast.LENGTH_SHORT).show();
+            }
 
-            //Pasar datos
-            intMostrar.putExtra("datos", usuario);
-
-            //Lanzar la actividad
-            startActivity(intMostrar);
+            db.close();
 
         }
 

@@ -45,10 +45,10 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:ems="10"
-            android:textSize="30sp"
             android:gravity="center"
+            android:hint="Digite el usuario"
             android:inputType="textPersonName"
-            android:text="Digite el usuario" />
+            android:textSize="30sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -68,10 +68,10 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:ems="10"
-            android:textSize="30sp"
             android:gravity="center"
+            android:hint="Digite el nombre"
             android:inputType="textPersonName"
-            android:text="Digite el nombre" />
+            android:textSize="30sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -137,6 +137,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textSize="20dp"
+            android:onClick="Consultar"
             android:gravity="center"
             android:text="Consultar" />
 
@@ -169,6 +170,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textSize="20sp"
+            android:onClick="Modificar"
             android:gravity="center"
             android:text="Modificar" />
 
@@ -178,6 +180,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textSize="20sp"
+            android:onClick="Eliminar"
             android:gravity="center"
             android:text="Eliminar" />
     </LinearLayout>
