@@ -34,7 +34,7 @@ public class RegisterActivity extends AppCompatActivity {
         jbtnModificar = findViewById(R.id.btnModificar);
         jbtnEliminar = findViewById(R.id.btnEliminar);
         jbtnLimpiar = findViewById(R.id.btnLimpiar);
-        jbtnRegresar = findViewById(R.id.btnRegresar);
+        jbtnRegresar = findViewById(R.id.btnRegresarV);
 
     }
 
@@ -134,7 +134,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(this,"Registro modificado", Toast.LENGTH_SHORT).show();
                     limpiarDatos();
                 }else{
-                    Toast.makeText(this, "No se puedo modificar el registro", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "No se puede modificar el registro", Toast.LENGTH_SHORT).show();
                 }
             }
         }
@@ -179,7 +179,6 @@ public class RegisterActivity extends AppCompatActivity {
 
         //Regresar al MainActivity
         Intent intMain = new Intent(this,MainActivity.class);
-
         //Lanzar la actividad
         startActivity(intMain);
     }

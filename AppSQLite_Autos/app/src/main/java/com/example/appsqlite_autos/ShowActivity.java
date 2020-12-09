@@ -21,7 +21,7 @@ public class ShowActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         jtvUsuario = findViewById(R.id.tvUsuario);
-        jbtnRegresar = findViewById(R.id.btnRegresar);
+        jbtnRegresar = findViewById(R.id.btnRegresarV);
         String usuario;
         usuario = getIntent().getStringExtra("datos");
         jtvUsuario.setText(usuario);

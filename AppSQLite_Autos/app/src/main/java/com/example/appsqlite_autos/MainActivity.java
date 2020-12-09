@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     EditText jetUsuario, jetClave;
-    Button jbtnIngresar, jbtnRegistrarse;
+    Button jbtnIngresar, jbtnRegistrarse, jbtnAutos, jbtnVentas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         jetClave = findViewById(R.id.etClave);
         jbtnIngresar = findViewById(R.id.btnIngresar);
         jbtnRegistrarse = findViewById(R.id.btnRegistrarse);
+        jbtnAutos = findViewById(R.id.btnAutos);
+        jbtnVentas = findViewById(R.id.btnVentas);
 
     }
 
@@ -65,9 +67,21 @@ public class MainActivity extends AppCompatActivity {
 
         //Cambio de actividad
         Intent intRegistrarse = new Intent(this,RegisterActivity.class);
-
         //Lanzar la actividad
         startActivity(intRegistrarse);
+
+    }
+
+    public void Autos(View v){
+
+        Intent intAutos = new Intent(this, Autos.class);
+        startActivity(intAutos);
+    }
+
+    public void Ventas(View v){
+
+        Intent intVentas = new Intent(this,Ventas.class);
+        startActivity(intVentas);
 
     }
 

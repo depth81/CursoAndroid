@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".Ventas">
 
     <LinearLayout
-        android:id="@+id/linearLayout7"
+        android:id="@+id/linearLayout25"
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:layout_marginTop="19dp"
-        android:layout_marginBottom="616dp"
+        android:layout_marginBottom="622dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,201 +19,192 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/tvMensajeReg"
+            android:id="@+id/tvVentas"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="REGISTRARSE"
+            android:text="VENTAS"
             android:textSize="30sp" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout8"
+        android:id="@+id/linearLayout26"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:layout_marginBottom="544dp"
+        android:layout_marginBottom="547dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout25"
+        app:layout_constraintVertical_bias="0.0">
 
         <EditText
-            android:id="@+id/etUsuario"
+            android:id="@+id/etPlacaV"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:ems="10"
             android:gravity="center"
-            android:hint="Digite el usuario"
+            android:hint="Placa"
             android:inputType="textPersonName"
             android:textSize="30sp" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout9"
+        android:id="@+id/linearLayout27"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:layout_marginBottom="469dp"
+        android:layout_marginBottom="472dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout8">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout26">
 
         <EditText
-            android:id="@+id/etNombre"
+            android:id="@+id/etModeloV"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:ems="10"
             android:gravity="center"
-            android:hint="Digite el nombre"
+            android:hint="Modelo"
             android:inputType="textPersonName"
             android:textSize="30sp" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout10"
+        android:id="@+id/linearLayout28"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:layout_marginBottom="401dp"
+        android:layout_marginBottom="397dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout9">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout27">
 
         <EditText
-            android:id="@+id/etClave1"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:ems="10"
-            android:textSize="30sp"
-            android:hint="Digite la clave"
-            android:gravity="center"
-            android:inputType="textPassword" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout11"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_marginBottom="328dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout10">
-
-        <EditText
-            android:id="@+id/etClave2"
+            android:id="@+id/etMarcaV"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:ems="10"
             android:gravity="center"
-            android:hint="Confirme la clave"
-            android:inputType="textPassword"
+            android:hint="Marca"
+            android:inputType="textPersonName"
             android:textSize="30sp" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout12"
+        android:id="@+id/linearLayout29"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:layout_marginBottom="250dp"
+        android:layout_marginBottom="322dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout11">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout28">
 
-        <Button
-            android:id="@+id/btnConsultar"
-            android:layout_width="121dp"
+        <EditText
+            android:id="@+id/etValorV"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textSize="20dp"
-            android:onClick="Consultar"
+            android:ems="10"
             android:gravity="center"
-            android:text="Consultar" />
-
-        <Button
-            android:id="@+id/btnAdicionar"
-            android:layout_width="121dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:onClick="Guardar"
-            android:text="Adicionar" />
-
+            android:hint="Valor"
+            android:inputType="textPersonName"
+            android:textSize="30sp" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout13"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_marginBottom="182dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout12">
-
-        <Button
-            android:id="@+id/btnModificar"
-            android:layout_width="121dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textSize="20sp"
-            android:onClick="Modificar"
-            android:gravity="center"
-            android:text="Modificar" />
-
-        <Button
-            android:id="@+id/btnEliminar"
-            android:layout_width="121dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textSize="20sp"
-            android:onClick="Eliminar"
-            android:gravity="center"
-            android:text="Eliminar" />
-    </LinearLayout>
-
-    <LinearLayout
+        android:id="@+id/linearLayout30"
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_marginTop="1dp"
-        android:layout_marginBottom="103dp"
+        android:layout_marginBottom="247dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout13">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout29">
 
-        <Button
-            android:id="@+id/btnLimpiar"
-            android:layout_width="121dp"
+        <TextView
+            android:id="@+id/tvDisponibleV"
+            android:layout_width="69dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:onClick="Limpiar"
-            android:text="Limpiar"
+            android:text="Disponible:"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/tvSINOv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="SI/NO"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout31"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginBottom="100dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout30">
+
+        <Button
+            android:id="@+id/btnVender"
+            android:layout_width="141dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="VENDER"
             android:textSize="20sp" />
 
         <Button
             android:id="@+id/btnRegresarV"
-            android:layout_width="121dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:onClick="Regresar"
+            android:onClick="RegresarVentas"
             android:text="Regresar"
             android:textSize="20sp" />
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginBottom="25dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout31">
+
+        <Button
+            android:id="@+id/btnLimpiarV"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Limpiar"
+            android:onClick="LimpiarVentas"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
