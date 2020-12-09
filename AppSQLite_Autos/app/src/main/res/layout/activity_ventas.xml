@@ -172,10 +172,11 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="VENDER"
+            android:onClick="Vender"
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/btnRegresarV"
+            android:id="@+id/btnRegresarv"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -196,14 +197,24 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout31">
 
         <Button
-            android:id="@+id/btnLimpiarV"
-            android:layout_width="wrap_content"
+            android:id="@+id/btnLimpiarv"
+            android:layout_width="157dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Limpiar"
             android:onClick="LimpiarVentas"
+            android:text="Limpiar"
             android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btnConsultarv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:onClick="ConsultarVenta"
+            android:text="Consultar" />
     </LinearLayout>
 
 
