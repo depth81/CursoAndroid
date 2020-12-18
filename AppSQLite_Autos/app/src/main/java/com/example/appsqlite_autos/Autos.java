@@ -98,8 +98,8 @@ public class Autos extends AppCompatActivity {
                 jetPlaca.setText(fila.getString(0));
                 jetMarca.setText(fila.getString(1));
                 jetModelo.setText(fila.getString(2));
-                jetValor.setText(fila.getString(4));
-                jtvSINO.setText(fila.getString(3));
+                jetValor.setText(fila.getString(3));
+                jtvSINO.setText(fila.getString(4));
             }
             else{
                 Toast.makeText(this, "El Auto no existe", Toast.LENGTH_SHORT).show();

@@ -42,6 +42,10 @@ public class Ventas extends AppCompatActivity {
         jbtnLimpiarv = findViewById(R.id.btnLimpiarv);
         jbtnConsultarv = findViewById(R.id.btnConsultarv);
 
+        jetModeloV.setEnabled(false);
+        jetMarcaV.setEnabled(false);
+        jetValorV.setEnabled(false);
+
     }
 
     public void ConsultarVenta(View v){
@@ -60,8 +64,15 @@ public class Ventas extends AppCompatActivity {
                 jetPlacaV.setText(fila.getString(0));
                 jetMarcaV.setText(fila.getString(1));
                 jetModeloV.setText(fila.getString(2));
-                jetValorV.setText(fila.getString(4));
-                jtvSINOv.setText(fila.getString(3));
+                jetValorV.setText(fila.getString(3));
+                jtvSINOv.setText(fila.getString(4));
+
+                if (jtvSINOv.getText().toString().equals("NO")){
+                    jbtnVender.setEnabled(false);
+                }else{
+                    jbtnVender.setEnabled(true);
+                }
+
             }
             else{
                 Toast.makeText(this, "El Auto no existe", Toast.LENGTH_SHORT).show();
@@ -101,10 +112,11 @@ public class Ventas extends AppCompatActivity {
             }
 
             db.close();
-
         }
 
     }
+
+
 
     public void LimpiarVentas(View V) {
         limpiarDatos();
@@ -117,6 +129,7 @@ public class Ventas extends AppCompatActivity {
         jetMarcaV.setText("");
         jetModeloV.setText("");
         jetPlacaV.setText("");
+        jbtnVender.setEnabled(true);
 
     }
 
