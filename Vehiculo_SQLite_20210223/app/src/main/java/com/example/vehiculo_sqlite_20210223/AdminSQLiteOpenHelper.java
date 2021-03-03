@@ -24,3 +24,5 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
         db.execSQL("create table tblAuto(placa text primary key, marca text, modelo text, valor text)");
     }
 }
+
+
