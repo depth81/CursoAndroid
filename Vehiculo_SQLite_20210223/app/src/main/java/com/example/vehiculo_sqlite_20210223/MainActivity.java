@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     EditText jetPlaca, jetMarca, jetModelo, jetValor;
-    Button jbtnGuardar, jbtnConsultar, jbtnEliminar, jbtnLimpiar;
+    Button jbtnGuardar, jbtnConsultar, jbtnEliminar, jbtnLimpiar, jbtnAnular;
     int sw = 0;
     long resp;
 
@@ -33,15 +33,16 @@ public class MainActivity extends AppCompatActivity {
         jbtnConsultar = findViewById(R.id.btnConsultar);
         jbtnEliminar = findViewById(R.id.btnEliminar);
         jbtnLimpiar = findViewById(R.id.btnLimpiar);
+        jbtnAnular = findViewById(R.id.btnAnular);
 
     }//END onCreate()
 
     public void guardar(View v){
 
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "bdConcesionario", null, 1);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "bdConcesionario1", null, 1);
         SQLiteDatabase mydb = admin.getWritableDatabase();
 
-        String placa, marca, modelo, valor;
+        String placa, marca, modelo, valor, activo="SI";
 
         placa = jetPlaca.getText().toString();
         marca = jetMarca.getText().toString();
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
             datos.put("marca", marca);
             datos.put("modelo", modelo);
             datos.put("valor", valor);
+            datos.put("activo", activo);
 
             if(sw == 0){
                 resp = mydb.insert("tblAuto",null, datos);
@@ -64,8 +66,6 @@ public class MainActivity extends AppCompatActivity {
                 resp = mydb.update("tblAuto", datos,"placa='" + placa + "'", null);
                 sw=0;
             }
-
-            //resp = mydb.insert("tblAuto", null, datos);
 
             if(resp != -1){
                 Toast.makeText(this, "Registro guardado ", Toast.LENGTH_SHORT).show();
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void consultar(View v){
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "bdConcesionario", null, 1);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "bdConcesionario1", null, 1);
         SQLiteDatabase mydb = admin.getReadableDatabase();
 
         String placa = jetPlaca.getText().toString();
@@ -106,12 +106,62 @@ public class MainActivity extends AppCompatActivity {
                 jetModelo.setText(myCursor.getString(2));
                 jetValor.setText(myCursor.getString(3));
                 sw=1;
+                Toast.makeText(this, "El estado del auto es " + myCursor.getString(4) + " disponible", Toast.LENGTH_SHORT).show();
             }else{
                 Toast.makeText(this, "Automovil no registrado", Toast.LENGTH_SHORT).show();
                 jetPlaca.requestFocus();
             }
         }
 
+        mydb.close();
+
+    }
+
+    public  void  eliminar(View v){
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "bdConcesionario1", null, 1);
+        SQLiteDatabase mydb = admin.getWritableDatabase();
+
+        String placa;
+        placa = jetPlaca.getText().toString();
+
+        if(placa.isEmpty() || sw==0){
+            Toast.makeText(this, "La placa es requerida o debe consultar primero", Toast.LENGTH_SHORT).show();
+            jetPlaca.requestFocus();
+        }else{
+            int resp = mydb.delete("tblAuto","placa='" + placa + "'", null);
+            if(resp > 0){
+                Toast.makeText(this, "Registro eliminado", Toast.LENGTH_SHORT).show();
+                limpiar();
+            }else{
+                Toast.makeText(this, "Error eliminando el registro", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    public void anular(View v){
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "bdConcesionario1", null, 1);
+        SQLiteDatabase mydb = admin.getWritableDatabase();
+
+        String placa, activo="NO";
+        placa = jetPlaca.getText().toString();
+
+        if(placa.isEmpty() || sw==0){
+            Toast.makeText(this, "La placa es requerida o debe consultar primero", Toast.LENGTH_SHORT).show();
+            jetPlaca.requestFocus();
+        }else{
+            ContentValues datos = new ContentValues();
+            datos.put("activo", activo);
+
+            resp = mydb.update("tblAuto", datos,"placa='" + placa + "'", null);
+            sw=0;
+
+            if(resp > 0){
+                Toast.makeText(this, "Registro anulado ", Toast.LENGTH_SHORT).show();
+                limpiar();
+            }else{
+                Toast.makeText(this,"Ha habido un error", Toast.LENGTH_SHORT).show();
+            }
+        }
         mydb.close();
 
     }
